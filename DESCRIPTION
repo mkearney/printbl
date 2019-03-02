@@ -1,0 +1,23 @@
+Package: printbl
+Title: Printable Tibbles
+Version: 0.0.1
+Authors@R: c(
+    person("Michael W.", "Kearney", ,
+    email = "kearneymw@missouri.edu", role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0002-0730-4694")))
+Description: A limitation of 'tibble' printing is that variables are hidden if
+    they do not fit within the device's width. This package solves this problem 
+    via printing rows. In other words, this package allows users to preview ALL 
+    of a data frame without sacrificing pretty printing behaviors of tibbles.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    tibble,
+    tfse,
+    crayon,
+    dapr,
+    magrittr
+RoxygenNote: 6.1.1
+URL: https://github.com/mkearney/printbl
+BugReports: https://github.com/mkearney/printbl/issues
