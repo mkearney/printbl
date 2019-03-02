@@ -38,7 +38,11 @@ otbl <- function(o) {
   if (length(o) == 1) cat_line(o)
   o <- gsub("<NA>", "NA  ", o)
   o <- col_pat(o, "^\\s{0,}\\d+(?= )", perl = TRUE)
-  o <- col_pats(o, "(?<=  )\\d+(?=  )", perl = TRUE, col = "#dd2222")
+  o <- col_pats(o, "(?<= )-\\d[\\d|\\.]{0,}\\b", perl = TRUE, col = "#880000")
+  o <- col_pats(o, "(?<=  )0\\b", perl = TRUE, col = "#880066")
+  o <- col_pats(o, "(?<=  )\\d[\\d|\\.]{0,}\\b", perl = TRUE, col = "#000066")
+  o <- col_pats(o, "\\bTRUE\\b", perl = TRUE, col = "goldenrod")
+  o <- col_pats(o, "\\bFALSE\\b", perl = TRUE, col = "goldenrod")
   o <- col_pats(o, "\\bNA\\b", col = "#CC7500")
   varlines <- grep("^\\# [^A]", o)
   o[varlines] <- col_pats(o[varlines], "\\S+(?= <[[:alpha:]])", perl = TRUE,
