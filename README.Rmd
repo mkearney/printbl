@@ -53,19 +53,13 @@ library(printbl)
 ## generate a data frame with lots of variables
 rt <- rtweet::search_tweets("lang:en -filter:quote", include_rts = FALSE)
 
-## print non-ID columns
-rt[, c(3, 6:30, 61:69, 76:82)]
+## select non-ID columns
+x <- rt[, c(3, 6:30, 61:69, 76:82)]
+
+## print rows
+print_tbl_df(x)
 ```
 
 <p align="center">
-  <img width="75%" src="tools/readme/ss1.png">
+  <img width="90%" src="tools/readme/sss.png">
 </p>
-
-<p align="center">
-  <img width="75%" src="tools/readme/ss2.png">
-</p>
-
-<p align="center">
-  <img width="75%" src="tools/readme/ss3.png">
-</p>
-
